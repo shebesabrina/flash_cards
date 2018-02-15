@@ -2,7 +2,6 @@ require 'pry'
 
 class Guess
   attr_reader :response,
-              :card
 
   def initialize(response, card)
     @response =  response
