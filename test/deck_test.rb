@@ -12,21 +12,16 @@ class DeckTest < Minitest::Test
     "Mars")
     @card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?",
     "North north west")
-  end
-
+    @deck = Deck.new([@card_1, @card_2, @card_3])
   end
 
   def test_it_exists
-skip
-    assert_instance_of Deck, @card_1
-    assert_instance_of Deck, @card_2
-    assert_instance_of Deck, @card_3
+    assert_instance_of Deck, @deck
   end
 
 
   def test_it_can_add_cards_in_a_deck
     skip
-    deck = Deck.new([@card_1, @card_2, @card_3])
-    assert_equal [@card_1, @card_2, @card_3], Deck.count
+    assert_equal [@card_1, @card_2, @card_3], @deck.cards
   end
 end
