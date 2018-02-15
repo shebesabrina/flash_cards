@@ -1,9 +1,11 @@
+require "./card"
+require 'pry'
+
 class Deck
-  # attr_reader :card,
-  #             :count
-  #
-  # def initialize(card, count)
-  #   @card = card
-  #   @count = count
-  # end
+  attr_reader :cards
+
+  def initialize(cards)
+    @cards = cards
+  end
+
 end
