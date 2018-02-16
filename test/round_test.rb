@@ -30,4 +30,9 @@ class RoundTest < Minitest::Test
     assert_equal @card_1, @round.current_card
   end
 
+  def test_it_can_record_a_guess
+    # binding.pry
+    assert_equal "Juneau", @round.record_guess
+  end
+
 end

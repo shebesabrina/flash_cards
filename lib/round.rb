@@ -1,3 +1,5 @@
+require 'pry'
+
 class Round
   attr_reader :deck,
               :guesses
@@ -12,6 +14,11 @@ class Round
     @current_card = deck.cards[@current_card_index]
     @current_card_index += 1
     @current_card
+  end
+
+  def record_guess
+    record_guess = @guesses << current_card.answer
+    record_guess.join
   end
 
 end
