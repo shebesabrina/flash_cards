@@ -1,8 +1,6 @@
+require './test/test_helper'
 require './lib/card'
 require './lib/guess'
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'pry'
 
 class GuessTest < Minitest::Test
   def setup

@@ -1,10 +1,9 @@
+require './test/test_helper'
 require './lib/card'
 require './lib/guess'
 require './lib/deck'
 require './lib/round'
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'pry'
+
 
 class RoundTest < Minitest::Test
   def setup

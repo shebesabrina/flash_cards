@@ -11,7 +11,7 @@ class Round
   end
 
   def current_card #may need to modify
-    @current_card = deck.cards[@current_card_index]
+    @current_card = @deck.cards[@current_card_index]
     @current_card_index += 1
     @current_card
   end
@@ -20,9 +20,5 @@ class Round
     @guesses << Guess.new(response, current_card)
     response
   end
-  #
-  # def count
-  #   @guesses.count
-  # end
 
 end
