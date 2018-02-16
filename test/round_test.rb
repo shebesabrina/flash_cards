@@ -32,7 +32,13 @@ class RoundTest < Minitest::Test
   end
 
   def test_it_can_record_a_guess
-    assert_equal "Juneau", @round.record_guess
+    assert_equal "Juneau", @round.record_guess("Juneau")
+    assert_equal "93,000,000", @round.record_guess("93,000,000")
+  end
+
+  def test_the_count_of_guesses
+    skip
+    assert_equal 1, @round.guesses.count
   end
 
 end
