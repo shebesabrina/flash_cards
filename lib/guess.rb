@@ -2,6 +2,7 @@ require 'pry'
 
 class Guess
   attr_reader :response,
+              :card
 
   def initialize(response, card)
     @response =  response
@@ -12,7 +13,7 @@ class Guess
     @response == @card.answer
   end
 
-  def response
+  def feedback
     if correct?
       "Correct!"
     else

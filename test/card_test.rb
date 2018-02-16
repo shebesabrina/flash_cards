@@ -7,7 +7,6 @@ require 'pry'
 class CardTest < Minitest::Test
   def setup
     @card_1 = Card.new("What is the capital of Alaska?", "Juneau")
-    @card_2 = Card.new("Which planet is closest to the sun?", "Mercury")
   end
 
   def test_it_exists
@@ -22,7 +21,4 @@ class CardTest < Minitest::Test
     assert_equal "Juneau", @card_1.answer
   end
 
-  def test_it_can_generate_a_different_card
-    assert_equal "Mercury", @card_2.answer
-  end
 end
