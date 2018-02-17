@@ -36,7 +36,7 @@ class RoundTest < Minitest::Test
   end
 
   def test_the_count_of_guesses
-    skip
+    @round.record_guess("Juneau")
     assert_equal 1, @round.guesses.count
   end
 

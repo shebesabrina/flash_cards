@@ -10,7 +10,7 @@ class Round
     @current_card_index = 0
   end
 
-  def current_card #may need to modify
+  def current_card 
     @current_card = @deck.cards[@current_card_index]
     @current_card_index += 1
     @current_card
