@@ -38,6 +38,15 @@ class RoundTest < Minitest::Test
   def test_the_count_of_guesses
     @round.record_guess("Juneau")
     assert_equal 1, @round.guesses.count
+
+    @round.record_guess("93,000,000")
+    assert_equal 2, @round.guesses.count
   end
+
+  def test_if_the_feedback_of_guess
+    @round.record_guess("Juneau")
+    assert_equal "Correct!", @round.guesses.first.feedback
+  end
+
 
 end
