@@ -23,7 +23,6 @@ class Round
   end
 
   def number_correct
-
     number_correct = @guesses.find_all do |guess|
       guess.correct?
     end
