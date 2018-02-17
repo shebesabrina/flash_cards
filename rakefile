@@ -1,15 +1,10 @@
-require 'rake'
-require 'rake/testtask'
-require 'simplecov'
+require "rake"
+require "rake/testtask"
 
-SimpleCov.start
-
-desc "run all tests"
-task :test do
- my_files = FileList['test/**/*.rb']
- my_files.each do |file|
-   ruby file
- end
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/*_test.rb']
+  t.warning = false
 end
 
-task default: ["test"]
+task default: :test

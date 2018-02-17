@@ -26,12 +26,11 @@ class Round
     number_correct = @guesses.find_all do |guess|
       guess.correct?
     end
-    @current_card = number_correct.count
+    @correct_cards = number_correct.count
   end
 
   def percent_correct
-    # binding.pry
-    ((@correct_card / @guesses.length) * 100)
+    ((number_correct.to_f / @guesses.count) * 100).to_i
   end
 
 end
