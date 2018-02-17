@@ -29,4 +29,9 @@ class Round
     @current_card = number_correct.count
   end
 
+  def percent_correct
+    # binding.pry
+    ((@correct_card / @guesses.length) * 100)
+  end
+
 end
