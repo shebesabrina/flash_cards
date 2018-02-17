@@ -8,6 +8,7 @@ class Round
     @deck = deck
     @guesses = []
     @current_card_index = 0
+    @correct_cards = 0
   end
 
   def current_card
@@ -21,6 +22,12 @@ class Round
     response
   end
 
+  def number_correct
 
+    number_correct = @guesses.find_all do |guess|
+      guess.correct?
+    end
+    @current_card = number_correct.count
+  end
 
 end
