@@ -28,6 +28,7 @@ class RoundTest < Minitest::Test
 
   def test_there_is_a_current_card
     assert_equal @card_1, @round.current_card
+    assert_equal @card_2, @round.current_card
   end
 
   def test_it_can_record_a_guess
@@ -54,6 +55,10 @@ class RoundTest < Minitest::Test
 
     @round.record_guess("93,000,000")
     assert_equal 2, @round.number_correct
+  end
+
+  def test_it_can_generate_a_guess_count
+    assert_equal "2", @round.record_guess("2")
   end
 
 end
