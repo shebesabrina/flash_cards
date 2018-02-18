@@ -8,7 +8,6 @@ class Round
     @deck = deck
     @guesses = []
     @current_card_index = 0
-    @correct_cards = 0
   end
 
   def current_card
@@ -26,11 +25,26 @@ class Round
     number_correct = @guesses.find_all do |guess|
       guess.correct?
     end
-    @correct_cards = number_correct.count
+    number_correct.count
   end
 
   def percent_correct
     ((number_correct.to_f / @guesses.count) * 100).to_i
   end
 
+  def start
+    puts"Welcome! You're playing with #{deck.count} cards."
+    puts "-------------------------------------------------\n\n"
+
+    deck.cards.each_with_index.map { |card, index|
+      puts "This is card number #{index + 1} out of #{deck.count}"
+      puts "Question: #{card.question}"
+      response = gets.strip
+      guess = Guess.new(response, card)
+      @guesses.push(guess)
+      puts "#{guess.feedback}\n\n"
+    }
+
+    puts "You had #{number_correct} correct guesses out of #{deck.cards.count} for a score of %#{percent_correct}."
+  end
 end
