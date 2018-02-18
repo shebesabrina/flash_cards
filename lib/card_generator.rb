@@ -1,15 +1,15 @@
 require 'pry'
 
 class CardGenerator
+  attr_accessor :cards
 
   def initialize(filename)
+    @cards = []
     File.open(filename, "r").each_line do |line|
-      # question: "What is 5 + 5?" answer: "10"
       data = line.split(/\n/)
-      question, answer = data.map{ |d| d.split(",") }.flatten
-
+      question, answer = data.map{ |line| line.split(",") }.flatten
+      card = Card.new(question, answer)
+      @cards.push(card)
     end
-
   end
-
 end

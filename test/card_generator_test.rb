@@ -10,6 +10,7 @@ class CardGeneratorTest < Minitest::Test
   def setup
     filename = File.dirname(__FILE__) + '/../cards.txt'
     @cards = CardGenerator.new(filename).cards
+    binding.pry
   end
 
   def test_it_exists
