@@ -8,6 +8,7 @@ class GuessTest < Minitest::Test
   @card_2 = Card.new("Which planet is closest to the sun?", "Mercury")
   @card_3 = Card.new("Describe in words the exact direction that is 697.5°
                      clockwise from due north?","North north west")
+                     
   @guess_1 = Guess.new("Juneau", @card_1)
   @guess_2 = Guess.new("Saturn", @card_2)
   @guess_3 = Guess.new("North north west", @card_3)
@@ -23,6 +24,8 @@ class GuessTest < Minitest::Test
 
   def test_it_can_respond
     assert_equal "Juneau", @guess_1.response
+    assert_equal "Saturn", @guess_2.response
+    assert_equal "North north west", @guess_3.response
   end
 
   def test_if_response_is_correct

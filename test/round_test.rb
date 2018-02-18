@@ -56,7 +56,7 @@ class RoundTest < Minitest::Test
     @round.record_guess("Juneau")
     assert_equal 1, @round.number_correct
 
-    @round.record_guess("93,000,000")
+    @round.record_guess("93,000,000")                                                                   
     assert_equal 2, @round.number_correct
   end
 
@@ -65,6 +65,7 @@ class RoundTest < Minitest::Test
   end
 
   def test_the_precentage
+    # binding.pry
     @round.record_guess("Juneau")
     @round.record_guess("93")
 
